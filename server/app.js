@@ -21,4 +21,6 @@ mongoose.connect(process.env.MONGO_URL).then(()=>{
     console.log(err); 
 })
 app.use('/api/user',require('./routes/userRoute'))
-app.use('/api/user',require('./routes/itemRoutes'))
+app.use('/api/user',require('./routes/itemRoute'))
+app.use('/api/user',require('./routes/cartRoute'))
+
