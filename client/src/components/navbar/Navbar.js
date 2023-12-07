@@ -9,21 +9,22 @@ function Navbar() {
   return (
     <div className='navbar'>
         <div className='logo'>
-            <Link to='/home'>Logo</Link>
+            <Link to='/'>Logo</Link>
         </div>
-        <div class="address">
-          <p class="add-1">Deliver to</p>
-          <div class="address-icon">
+        <div className="address">
+          <p className="add-1">Deliver to</p>
+          <div className="address-icon">
           <FaMapMarkerAlt />
-            <p class="add-2">India</p>
+            <p className="add-2">India</p>
           </div>
         </div>
-        <div class="search">
-          <select class="search-select">
+        <div className="search">
+          <select className="search-select">
             <option>All</option>
           </select>
-          <input type="text" placeholder="search product" class="search-input" />
-          <div class="search-icon">
+          <input type="text" placeholder="search product" className="search-input" />
+          <div className="search-icon">
+            
           <IoIosSearch />
           </div>
         </div>
@@ -31,6 +32,9 @@ function Navbar() {
             <ul>
             <li>
                 <Link to='/'>Home</Link>
+            </li>
+            <li>
+              <Link to='/sell'>Sell</Link>
             </li>
             <li>
                 <Link to='/signin'>Signin</Link>
