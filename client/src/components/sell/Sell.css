@@ -1,0 +1,41 @@
+/* Sell.css */
+
+.sell-container {
+    max-width: 600px;
+    margin: 10px auto;
+  }
+  
+  .sell-input-field {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sell-input-field input {
+    width: 100%;
+    padding: 15px; /* Increase padding for height */
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+  }
+  
+  .sell-file-field {
+    margin-bottom: 20px;
+  }
+  
+  .sell-btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .sell-btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Add more styles as needed */
+  
