@@ -24,7 +24,7 @@
   }
   .search{
     display: flex;
-    background-color: pink;
+    background-color: white;
     width: 300px;
     height: 40px;
     border-radius: 4px;
@@ -43,6 +43,7 @@
     width: 100%;
     font-size: 1rem;
     border: none;
+    height: 40px;
 }
 .search-icon{
     width: 45px;
