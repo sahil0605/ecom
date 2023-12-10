@@ -1,6 +1,6 @@
 // Sell.jsx
 
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./Sell.css"; // Import the CSS file
 import { Cookies, useCookies } from "react-cookie";
 import axios from 'axios'
@@ -30,10 +30,19 @@ function Sell() {
       console.log(response)
       // Get the image URL from Cloudinary response
       setUrl(response.data.url);
-      console.log(url);
+      
 
       // Now, you can send the form data along with the image URL to your backend
-      if(url){ const sellData = {
+      }
+     catch (error) {
+      console.error("Error uploading image or posting data:", error);
+    }
+  };
+  useEffect(() => {
+    // Check if 'url' is not empty
+    if (url) {
+      console.log(url);
+      const sellData = {
         type,
         name,
         description,
@@ -41,17 +50,27 @@ function Sell() {
         url,
       };
 
-      // Assuming your backend endpoint is something like "/api/sell"
-      const backendResponse = await axios.post("http://localhost:5000/api/user/createItem", sellData,{
-        headers:{authorization :cookies.access_token}
-      });
+      // Make the POST request to the backend
+      const postToBackend = async () => {
+        try {
+          const backendResponse = await axios.post(
+            "http://localhost:5000/api/user/createItem",
+            sellData,
+            {
+              headers: { authorization: cookies.access_token },
+            }
+          );
 
-      console.log("Backend Response:", backendResponse.data);
-    } }
-     catch (error) {
-      console.error("Error uploading image or posting data:", error);
+          console.log("Backend Response:", backendResponse.data);
+        } catch (error) {
+          console.error("Error posting data to backend:", error);
+        }
+      };
+
+      // Call the function to post data to backend
+      postToBackend();
     }
-  };
+  }, [url, type, name, description, price, cookies.access_token]);
 
   // const handlePost = () => {
   //   // Check if any of the fields is empty

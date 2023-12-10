@@ -2,8 +2,8 @@ const Item = require('../models/item')
 
 exports.createItem =async(req,res)=>{
     try{
-        const {type,name,description ,price,pic}= req.body;
-        if(!type || !name || !description || !price || !pic){
+        const {type,name,description ,price,url}= req.body;
+        if(!type || !name || !description || !price ||!url){
             return res.status(300).json({
                 message:"enter all feilds"
             })
@@ -13,7 +13,7 @@ exports.createItem =async(req,res)=>{
             type,
             description,
             price,
-            pic,
+            pic:url,
         })
         await newItem.save();
         return res.status(201).json({
