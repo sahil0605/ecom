@@ -6,6 +6,8 @@ import Home from './components/home/Home';
 import Signin from './components/signin/Signin';
 import Sell from './components/sell/Sell';
 
+import Item from './components/item/Item';
+
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path='/signin' element={<Signin/>}/>
         <Route path='/sell' element={<Sell/>}/>
+        <Route path='/item' element={<Item/>}/>
           {/* <Route path="/createPost" element={<CreatePost/>} />
           <Route path="/profile" element={<Profile/>} />
           <Route path='/signin' element={<Signin/>}/>

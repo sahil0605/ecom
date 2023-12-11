@@ -5,8 +5,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px; /* Add padding as needed */
-    background-color: black; /* Add background color as needed */
-    color: aliceblue;
+    background-color: rgb(11, 11, 10); /* Add background color as needed */
+    color: rgb(240, 255, 250);
   }
   
   .logo {
@@ -60,6 +60,7 @@
   .list {
     display: flex;
     align-items: center;
+    position: relative;
   }
   
   ul {
@@ -71,7 +72,11 @@
   }
   
   li {
-    font-size: 16px; /* Adjust font size as needed */
+    font-size: 16px;
+    display: flex; /* Adjust font size as needed */
+    justify-content: center;
+    flex-direction: column;
+    color: white;
   }
   
   a {
@@ -83,4 +88,31 @@
   a:hover {
     color: #007bff; /* Change color on hover as needed */
   }
+  .cnt{
+    color: wheat;
+  }
+
+  .cart-cntr
+  {
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    z-index: 3;
+  
+  }
+  .cart-item-count
+  {
+    background-color: white;
+    color: #0f1111;
+    padding: .5px .5px;
+    border-radius: 50px;
+    font-size: 12px;
+    margin-left: 11px;
+    z-index: 10;
+    margin-bottom: -7px;
+  
+  }
+ 
+ 
   

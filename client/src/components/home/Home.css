@@ -98,8 +98,8 @@ h2 {
     color: #000;
 }
 
-p {
-    color: #777;
+a {
+    color: white;
 }
 
 /* Media query for smaller screens (e.g., mobile phones) */

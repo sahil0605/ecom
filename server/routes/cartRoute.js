@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const Auth = require('../middleware/Auth')
 const {getCartItems,addItemToCart,removeCartItem,increaseQuantity,decreaseQuantity} = require('../controllers/cart');
 
 // Other routes...
 
 // Retrieve all cart items for a user
-router.get('/cart/:userId/items', getCartItems);
+router.get('/cart/:userId/items',Auth, getCartItems);
 router.post('/addItemToCart',addItemToCart);
 router.delete('/cart/:userId/items/:itemId',removeCartItem)
 router.put('/cart/:userId/increase/:itemId',increaseQuantity)

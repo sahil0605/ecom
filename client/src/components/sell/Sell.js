@@ -4,6 +4,7 @@ import React, { useState,useEffect } from "react";
 import "./Sell.css"; // Import the CSS file
 import { Cookies, useCookies } from "react-cookie";
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
 function Sell() {
   const [type, setType] = useState("");
@@ -12,6 +13,7 @@ function Sell() {
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
+  const navigate = useNavigate();
 
   const [cookies] = useCookies(['access_token'])
 
@@ -52,6 +54,7 @@ function Sell() {
 
       // Make the POST request to the backend
       const postToBackend = async () => {
+        
         try {
           const backendResponse = await axios.post(
             "http://localhost:5000/api/user/createItem",
@@ -60,8 +63,12 @@ function Sell() {
               headers: { authorization: cookies.access_token },
             }
           );
+          alert('posted');
 
           console.log("Backend Response:", backendResponse.data);
+          setTimeout(() => {
+            navigate("/");
+          }, 2000);
         } catch (error) {
           console.error("Error posting data to backend:", error);
         }
