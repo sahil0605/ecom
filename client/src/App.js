@@ -7,6 +7,7 @@ import Signin from './components/signin/Signin';
 import Sell from './components/sell/Sell';
 
 import Item from './components/item/Item';
+import Cart from './components/cart/Cart';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/signin' element={<Signin/>}/>
         <Route path='/sell' element={<Sell/>}/>
         <Route path='/item' element={<Item/>}/>
+        <Route path='/cart' element={<Cart/>}/>
           {/* <Route path="/createPost" element={<CreatePost/>} />
           <Route path="/profile" element={<Profile/>} />
           <Route path='/signin' element={<Signin/>}/>

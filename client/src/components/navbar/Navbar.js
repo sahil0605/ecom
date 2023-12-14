@@ -15,7 +15,7 @@ function Navbar() {
     // Fetch cart information from the backend
     const fetchCart = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/user/${user._id}/items`, {
+        const response = await fetch(`http://localhost:5000/api/user/cart/${user._id}/items`, {
           method: "GET",
           headers: {
             Authorization: `Bearer ${cookies.access_token}`
@@ -30,7 +30,7 @@ function Navbar() {
           // Parse the response to get the number of items in the cart
           const data = await response.json();
           console.log(data)
-          const itemCount = data.items.length;
+          const itemCount = data.cartItems.length;
           setCartItemCount(itemCount);
         }
       } catch (error) {

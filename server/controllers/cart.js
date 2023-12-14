@@ -4,9 +4,10 @@ const Item = require("../models/item");
 exports.getCartItems = async (req, res) => {
   try {
     const { userId } = req.params;
-
+    console.log(userId)
     // Find the cart for the user
     const cart = await Cart.findOne({ user: userId });
+    
 
     if (!cart) {
       return res.status(404).json({ message: "Cart not found for this user" });
