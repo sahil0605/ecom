@@ -25,7 +25,6 @@ function Navbar() {
         if (response.status === 404) {
           // No items in the cart
           setCartItemCount(0);
-          console.log(0)
         } else if (response.ok) {
           // Parse the response to get the number of items in the cart
           const data = await response.json();

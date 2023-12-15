@@ -23,6 +23,7 @@ exports.getCartItems = async (req, res) => {
           description: product.description,
           price: product.price,
           quantity: item.quantity,
+          pic :product.pic
         };
       })
     );
